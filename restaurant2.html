@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="addtocart.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <title>THE DINER</title>
+</head>
+
+<button id="floatingCartBtn" onclick="goToCart()">Cart: Rs. 0</button>
+<body>
+  <header class="header">
+    
+    <nav>
+      <div class="nav__header">
+
+        <div class="nav__logo">
+          <a href="#">
+            <img src="logo.png" alt="logo" class="nav__logo-dark" />
+          </a>
+        </div>
+
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-line"></i>
+        </div>
+
+      </div>
+
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#special">SPECIAL</a></li>
+        <li><a href="#menu">MENU</a></li>
+        <li><a href="#event">EVENTS</a></li>
+        <li><a href="#contact">CONTACT US</a></li>
+      </ul>
+
+    </nav>
+
+    <div class="section__container header__container" id="home">
+      
+        <div class="header__image">
+        <img src="header.png" alt="header" />
+        </div>
+
+      <div class="header__content">
+        <h2>IT IS A GOOD TIME FOR THE GREAT TASTE OF FAST FOOD</h2>
+        <h1>BURGER<br /><span>THIS WEEK'S SPECIALS</span></h1>
+      </div>
+
+    </div>
+
+  </header>
+
+  <section class="section__container banner__container" id="special">
+    
+    <div class="banner__card">
+      <p>TRY IT OUT TODAY</p>
+      <h4>MOST POPULAR BURGER</h4>
+    </div>
+
+    <div class="banner__card">
+      <p>TRY IT OUT TODAY</p>
+      <h4>MORE FUN<br />BETTER TASTE</h4>
+    </div>
+
+    <div class="banner__card">
+      <p>TRY IT OUT TODAY</p>
+      <h4>FRESH &</h4>
+      <H4>CHILI</H4>
+    </div>
+
+  </section>
+
+  <section class="section__container order__container" id="menu">
+    <h3>ALWAYS TASTY</h3>
+    <h2 class="section__header">CHOOSE & ENJOY</h2>
+    <p class="section__description">
+      Whether you crave classic flavors or daring combinations, this is where
+      your culinary journey begins. Indulge your cravings and savor every bite
+      as you create your personalized experience with THE DINER.
+    </p>
+
+    <div class="order__grid">
+      <div class="order__card">
+        <img src="order1.png" alt="Mighty Zinger Image" />
+        <h4>Mighty Zinger</h4>
+        <h4>Rs. 800</h4>
+        <p>
+          Our signature Zinger but Bigger! Double Zinger fillet with a combination of spicy and plain mayo, lettuce and cheese- sandwiched between a sesame seed bun
+        </p>
+        <button class="btn" onclick="addItem(1)">Add To Cart</button>
+      </div>
+      <div class="order__card">
+        <img src="order2.png" alt="Family Meal Image"/>
+        <h4>Family Meal</h4>
+        <h4>Rs. 3000</h4>
+        <p>
+          A hearty meal for the fam. It includes 2 Zinger burgers + 2 Krunch burgers + 4 pieces Hot and Crispy Chicken + 2 Dinner rolls + 1.5 Liter drink
+        </p>
+        <button class="btn" onclick="addItem(2)">Add To Cart</button>
+      </div>
+      <div class="order__card">
+        <img src="order3.png" alt="Kentucky Burger Image" />
+        <h4>Kentucky Burger</h4>
+        <h4>Rs. 800</h4>
+        <p>
+          OG Zinger fillet layered with beef pepperoni, crispy fried onions, cheese and smokey BBQ sauce- sandwiched between an herb and black sesame bun
+        </p>
+        <button class="btn" onclick="addItem(3)">Add To Cart</button>
+      </div>
+      <div class="order__card">
+        <img src="order4.png" alt="3 Pcs Chicken Image" />
+        <h4>3 Pcs Chicken</h4>
+        <h4>Rs. 500</h4>
+        <p>
+          Get ready for a triple threat of flavor! Enjoy 3 pieces of our legendary chicken, fried to a perfect, golden brown crunch.
+        </p>
+        <button class="btn" onclick="addItem(4)">Add To Cart</button>
+      </div>
+      <div class="order__card">
+        <img src="order5.png" alt="Chicken and Chips Image" />
+        <h4>Chicken & Chips</h4>
+        <h4>Rs. 800</h4>
+        <p>
+          2 pieces of Hot and Crispy Fried Chicken+ Fries + Dinner roll+ signature Vietnamese Sauce
+        </p>
+        <button class="btn" onclick="addItem(5)">Add To Cart</button>
+      </div>
+      <div class="order__card">
+        <img src="order6.png" alt="Twister" />
+        <h4>Twister</h4>
+        <h4>Rs. 800</h4>
+        <p>
+          Tender boneless strips, black pepper mayo, diced tomatoes and lettuce wrapped in a tortilla
+        </p>
+        <button class="btn" onclick="addItem(6)">Add To Cart</button>
+      </div>
+      <div class="order__card">
+        <img src="order7.png" alt="Malai Tikka Image" />
+        <h4>Malai Tikka</h4>
+        <h4>Rs. 800</h4>
+        <p>
+          Creamy and soft boneless chicken pieces. Marinated in yogurt and mild spices. Grilled to perfection. Served with salad and mint chutney.
+        </p>
+        <button class="btn" onclick="addItem(7)">Add To Cart</button>
+      </div>
+      <div class="order__card">
+        <img src="order8.png" alt="Chicken Tikka Image" />
+        <h4>Chicken Tikka</h4>
+        <h4>Rs. 800</h4>
+        <p>
+         Smoky and juicy boneless chicken pieces. Marinated in yogurt and bold spices. Charcoal grilled for flavor. Served with onions and green chutney.
+        </p>
+        <button class="btn" onclick="addItem(8)">Add To Cart</button>
+      </div>
+      <div class="order__card">
+        <img src="order9.png" alt="Chicken Boti Image" />
+        <h4>Chicken Boti</h4>
+        <h4>Rs. 850</h4>
+        <p>
+          Spicy and tender boneless chicken chunks. Marinated in rich yogurt and traditional spices. Grilled on a fiery flame. Served with onions and lemon wedges.
+        </p>
+        <button class="btn" onclick="addItem(9)">Add To Cart</button>
+      </div>
+      <div class="order__card">
+        <img src="order10.png" alt="Malai Boti Image" />
+        <h4>Malai Boti</h4>
+        <h4>Rs. 900</h4>
+        <p>
+          Creamy and tender boneless chicken. Marinated in yogurt and cream.
+        </p>
+        <button class="btn" onclick="addItem(10)">Add To Cart</button>
+      </div>
+      <div class="order__card">
+        <img src="order11.png" alt="Chicken Reshmi Kabab" />
+        <h4>Chicken Reshmi Kabab</h4>
+        <h4>Rs. 900</h4>
+        <p>
+          Silky and tender chicken kababs. Minced with mild spices.
+        </p>
+        <button class="btn" onclick="addItem(11)">Add To Cart</button>
+      </div>
+      <div class="order__card">
+        <img src="order12.png" alt="BBQ Spicy Chargha" />
+        <h4>BBQ Spicy Chargha</h4>
+        <h4>Rs. 800</h4>
+        <p>
+          Whole chicken marinated in spices. BBQ grilled to perfection. Smoky and flavorful.
+        </p>
+        <button class="btn" onclick="addItem(12)">Add To Cart</button>
+      </div>
+      <div class="order__card">
+        <img src="order13.png" alt="Grilled Fish Fillet Image" />
+        <h4>Grilled Fish Fillet</h4>
+        <h4>Rs. 800</h4>
+        <p>
+          Juicy fish fillet. Grilled with light spices. Served with lemon butter sauce.
+        </p>
+        <button class="btn" onclick="addItem(13)">Add To Cart</button>
+      </div>
+      <div class="order__card">
+        <img src="order14.png" alt="Fried Finger Fish Image" />
+        <h4>Fried Finger Fish</h4>
+        <h4>Rs. 800</h4>
+        <p>
+          Crunchy bite-sized fish strips. Perfect as a snack. Served with garlic mayo dip.
+        </p>
+        <button class="btn" onclick="addItem(14)" >Add To Cart</button>
+      </div>
+      <div class="order__card">
+        <img src="order15.png" alt="Fried Fish and Chips Image" />
+        <h4>Fried Fish & Chips</h4>
+        <h4>Rs. 800</h4>
+        <p>
+          Crispy golden fried fish. Served with french fries. And tartar sauce on the side.
+        </p>
+        <button class="btn" onclick="addItem(15)" >Add To Cart</button>
+      </div>
+      <div class="order__card">
+        <img src="order16.png" alt="Chicken Handi Image" />
+        <h4>Chicken Handi</h4>
+        <h4>Rs. 1000</h4>
+        <p>
+          Traditional spicy chicken curry. Cooked with herbs and spices. Served sizzling in a handi.
+        </p>
+        <button onclick="addItem(16)" class="btn">Add To Cart</button>
+      </div>
+      <div class="order__card">
+        <img src="order17.png" alt="Makhni Handi Image" />
+        <h4>Makhni Handi</h4>
+        <h4>Rs. 1000</h4>
+        <p>
+          Creamy and buttery gravy. Cooked with tender chicken pieces. Served sizzling in a handi.
+        </p>
+        <button class="btn" onclick="addItem(17)" >Add To Cart</button>
+      </div>
+      <div class="order__card">
+        <img src="order18.png" alt="Fish Handi Image" />
+        <h4>Fish Handi</h4>
+        <h4>Rs. 1000</h4>
+        <p>
+          Boneless fish cubes. Cooked in well organized rich spicy gravy. Served sizzling in a handi.
+        </p>
+        <button class="btn" onclick="addItem(18)">Add To Cart</button>
+      </div>
+      <div class="order__card">
+        <img src="order19.png" alt="Chicken Chatni roll image" />
+        <h4>Chicken Chatni Roll</h4>
+        <h4>Rs. 350</h4>
+        <p>
+           Spicy grilled chicken strips. Wrapped in soft paratha. With mint chutney and onions.
+        </p>
+        <button class="btn" onclick="addItem(19)" >Add To Cart</button>
+      </div>
+      <div class="order__card">
+        <img src="order20.png" alt="Chicken Garlic Mayo Roll Image" />
+        <h4>Chicken Garlic Mayo Roll</h4>
+        <h4>Rs. 300</h4>
+        <p>
+          Tender chicken pieces. Creamy delicious garlic mayo sauce. Wrapped in a soft paratha.
+        </p>
+        <button class="btn" onclick="addItem(20)">Add To Cart</button>
+      </div>
+      <div class="order__card">
+        <img src="order21.png" alt="Malai Boti Roll Image" />
+        <h4>Malai Boti Roll</h4>
+        <h4>Rs. 300</h4>
+        <p>
+          Creamy and soft malai boti pieces. Wrapped in a fresh paratha. With a touch of mint sauce.
+        </p>
+        <button class="btn" onclick="addItem(21)" >Add To Cart</button>
+      </div>
+      <div class="order__card">
+        <img src="order22.png" alt="Paratha image" />
+        <h4>Puri Paratha</h4>
+        <h4>Rs. 200</h4>
+        <p>
+          Flaky and layered flatbread. Soft Golden fried to perfection. Served plain or with curry.
+        </p>
+        <button class="btn" onclick="addItem(22)" >Add To Cart</button>
+      </div>
+      <div class="order__card">
+        <img src="order23.png" alt="Garlic Naan image" />
+        <h4>Garlic Naan</h4>
+        <h4>Rs. 200</h4>
+        <p>
+          Buttery naan bread. Topped with fresh garlic and herbs. Baked fresh in the tandoor.
+        </p>
+        <button class="btn" onclick="addItem(23)">Add To Cart</button>
+      </div>
+      <div class="order__card" data-id="24">
+        <img src="order24.png" alt="Naan image"/>
+        <h4>Naan</h4>
+        <h4>Rs. 100</h4>
+        <p>
+          Soft and fluffy traditional bread. Freshly baked in the tandoor. Perfect with curries.
+        </p>
+        <button class="btn" onclick="addItem(24)" >Add To Cart</button>
+      </div>
+      <div class="order__card">
+        <img src="order25.png" alt="Water Bottle image" />
+        <h4>Water (Large)</h4>
+        <h4>Rs. 300</h4>
+        <p>
+          Chilled and refreshing. Pure bottled water. Perfect large size for meals.
+        </p>
+        <button class="btn" onclick="addItem(25)" >Add To Cart</button>
+      </div>
+      <div class="order__card">
+        <img src="order26.png" alt="Cold Drink Image" />
+        <h4>Cold Drink</h4>
+        <h4>Rs. 200</h4>
+        <p>
+          Chilled and refreshing Cold Drink Compact size for individuals.
+        </p>
+        <button class="btn" onclick="addItem(26)" >Add To Cart</button>
+      </div>
+      <div class="order__card">
+        <img src="order27.png" alt="Water Bottle image" />
+        <h4>Water (Small)</h4>
+        <h4>Rs. 100</h4>
+        <p>
+         Chilled and refreshing. Pure bottled water. Compact size for individuals.
+        </p>
+        <button class="btn" onclick="addItem(27)">Add To Cart</button>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section__container event__container" id="event">
+    <div class="event__content">
+      <div class="event__image">
+        <img src="event.png" alt="event" />
+      </div>
+      <div class="event__details">
+        <h3>Discover</h3>
+        <h2 class="section__header">UPCOMING EVENTS</h2>
+        <p class="section__description">
+          From sizzling weekend grill festivals and live cooking stations to 
+          family feast nights and spicy food challenges, there's always a new 
+          reason to celebrate at THE DINER. Be the first to get 
+          exclusive updates on our latest menu launches, special discounts, 
+          and community gatherings as we continue to serve up happiness and 
+          unforgettable flavors. Join our family and be part of the excitement.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="reservation" id="contact">
+    <div class="section__container reservation__container">
+      <h3>RESERVATION</h3>
+      <h2 class="section__header">BOOK YOUR TABLE</h2>
+      <form action="#" method="get">
+        <input type="text" placeholder="NAME" />
+        <input type="email" placeholder="EMAIL" />
+        <input type="date" placeholder="DATE" />
+        <input type="time" placeholder="TIME" />
+        <input type="number" placeholder="PEOPLE" min="1" max="20" required>
+        <button class="btn" type="submit">FIND TABLE</button>
+      </form>
+    </div>
+    <img src="reservation1.png" alt="reservation" class="reservation__bg-1" />
+    <img src="reservation2.png" alt="reservation" class="reservation__bg-2" />
+  </section>
+
+  <footer class="footer">
+    <div class="section__container footer__container">
+      <div class="footer__logo">
+        <img src="logowhite.png" alt="logo" />
+      </div>
+      <div class="footer__content">
+        <p>
+            Welcome to THE DINER, where our love for bold flavors
+            and heartfelt service creates a true fast food sanctuary.
+            Our journey is built on a simple promise: to elevate classic 
+            favorites with uncompromising quality, from our signature spice 
+            blends to our freshly prepared specialties. We believe every meal 
+            should be a celebration of taste, and we're dedicated to crafting 
+            those delicious, unforgettable moments for you and your loved ones.
+        </p>
+        <div>
+          <ul class="footer__links">
+            <li>
+              <span><i class="ri-map-pin-2-fill"></i></span>
+              FAST NUCES
+            </li>
+
+            <li>
+              <span><i class="ri-mail-fill"></i></span>
+              K250521@nu.edu.pk
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bar">
+      Copyright © 2025 Somil. All rights reserved.
+    </div>
+  </footer>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <link rel="stylesheet" href="addtocart.css" />
+  <script src= "addtocart.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Successful - THE DINER</title>
+  <link rel="stylesheet" href="addtocart.css">
+</head>
+
+<body>
+ <header class="header">
+    <nav>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="#">
+            <img src="logo.png" alt="logo" class="nav__logo-dark" />
+          </a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="restaurant2.html#home">HOME</a></li>
+        <li><a href="restaurant2.html#special">SPECIAL</a></li>
+        <li><a href="restaurant2.html#menu">MENU</a></li>
+        <li><a href="restaurant2.html#event">EVENTS</a></li>
+        <li><a href="restaurant2.html#contact">CONTACT US</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="order-success-container">
+    <h1>🎉 Order Placed Successfully!</h1>
+    <p>Thank you for your order. Here is your summary:</p>
+
+   <div id="order-summary" class="summary-box">
+    <h2>Order Summary</h2>
+    <p><strong>Items:</strong></p>
+    <div id="summary-items"></div>
+
+    <p><strong>Total Amount:</strong> Rs. <span id="total-amount">0</span></p>
+</div>
+
+
+    <div id="customer-details" class="summary-box">
+      <h2>Your Details</h2>
+      <p><strong>Name:</strong> <span id="c-name"></span></p>
+      <p><strong>Address:</strong> <span id="c-address"></span></p>
+      <p><strong>City:</strong> <span id="c-city"></span></p>
+      <p><strong>Postal Code:</strong> <span id="c-postal"></span></p>
+      <p><strong>Phone:</strong> <span id="c-phone"></span></p>
+      <p><strong>Email:</strong> <span id="c-email"></span></p>
+    </div>
+
+    <a href="restaurant2.html" class="back-button">🏠 Back to Homepage</a>
+  </div>
+
+  
+  <footer class="footer">
+      <div class="section__container footer__container">
+        <div class="footer__logo">
+          <img src="logowhite.png" alt="logo" />
+        </div>
+        <div class="footer__content">
+          <p>
+              Welcome to THE DINER, where our love for bold flavors
+            and heartfelt service creates a true fast food sanctuary.
+            Our journey is built on a simple promise: to elevate classic 
+            favorites with uncompromising quality, from our signature spice 
+            blends to our freshly prepared specialties. We believe every meal 
+            should be a celebration of taste, and we're dedicated to crafting 
+            those delicious, unforgettable moments for you and your loved ones.
+          </p>
+          <div>
+            <ul class="footer__links">
+              <li>
+                <span><i class="ri-map-pin-2-fill"></i></span>
+                FAST NUCES
+              </li>
+              
+              <li>
+                <span><i class="ri-mail-fill"></i></span>
+                K250521@nu.edu.pk
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bar">
+        Copyright © 2025 Somil. All rights reserved.
+      </div>
+    </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const details = JSON.parse(localStorage.getItem("checkoutDetails")) || {};
+
+    document.getElementById("c-name").textContent = details.name || "N/A";
+    document.getElementById("c-address").textContent = details.address || "N/A";
+    document.getElementById("c-city").textContent = details.city || "N/A";
+    document.getElementById("c-postal").textContent = details.postal || "N/A";
+    document.getElementById("c-phone").textContent = details.phone || "N/A";
+    document.getElementById("c-email").textContent = details.email || "N/A";
+
+    const products = [
+        { id: 1, name: "Mighty Zinger", price: 800 },
+        { id: 2, name: "Family Meal", price: 3000 },
+        { id: 3, name: "Kentucky Burger", price: 800 },
+        { id: 4, name: "3 Pc Chicken", price: 500 },
+        { id: 5, name: "Chicken and Chips", price: 800 },
+        { id: 6, name: "Twister", price: 800 },
+        { id: 7, name: "Malai Tikka", price: 800 },
+        { id: 8, name: "Chicken Tikka", price: 800 },
+        { id: 9, name: "Chicken Botti", price: 850 },
+        { id: 10, name: "Malai Boti", price: 900 },
+        { id: 11, name: "Chicken Reshmi Kabab", price: 900 },
+        { id: 12, name: "BBQ Spicy Chargha", price: 800 },
+        { id: 13, name: "Grilled Fish Fillet", price: 900 },
+        { id: 14, name: "Fried Finger Fish", price: 800 },
+        { id: 15, name: "Fried Fish and Chips", price: 800 },
+        { id: 16, name: "Chicken Handi", price: 1000 },
+        { id: 17, name: "Makhni Handi", price: 1000 },
+        { id: 18, name: "Fish Handi", price: 1000 },
+        { id: 19, name: "Chicken Chatni Roll", price: 350 },
+        { id: 20, name: "Chicken Garlic Mayo Roll", price: 300 },
+        { id: 21, name: "Malai Boti Roll", price: 300 },
+        { id: 22, name: "Puri Paratha", price: 200 },
+        { id: 23, name: "Garlic Naan", price: 200 },
+        { id: 24, name: "Naan", price: 100 },
+        { id: 25, name: "Water (Large)", price: 300 },
+        { id: 26, name: "Cold Drink", price: 200 },
+        { id: 27, name: "Water (Small)", price: 100 }
+    ];
+
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const summaryItems = document.getElementById("summary-items");
+
+    summaryItems.innerHTML = "";
+
+    let finalTotal = 0;  
+
+    for (let i = 0; i < cart.length; i++) {
+        if (cart[i] > 0) {
+            const product = products[i];
+            const subtotal = product.price * cart[i];
+            finalTotal += subtotal;   
+
+            summaryItems.innerHTML += `
+                <p>${product.name} (x${cart[i]}) — Rs. ${subtotal}</p>
+            `;
+        }
+    }
+
+    
+    document.getElementById("total-amount").textContent = finalTotal;
+});
+</script>
+
+</body>
+</html>
